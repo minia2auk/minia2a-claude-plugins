@@ -1,0 +1,12 @@
+{
+  "name": "minia2a-service-discovery",
+  "description": "Discover, search, and inspect x402-payable API services on the minia2a marketplace. Search by keyword, filter by category, sort by price or popularity, and read any service's schema and docs before calling it.",
+  "version": "0.1.0",
+  "author": {
+    "name": "minia2a",
+    "email": "iris@minia2a.uk",
+    "url": "https://minia2a.uk"
+  },
+  "license": "MIT",
+  "keywords": ["x402", "api-discovery", "agent-tools", "service-catalog", "m2m"]
+}
