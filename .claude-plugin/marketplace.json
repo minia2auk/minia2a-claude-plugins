@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "minia2a-claude-plugins",
-  "description": "minia2a — the agent-to-agent API marketplace. Discover and pay for 1,679 x402 pay-per-call endpoints (AI inference, crypto data, web scraping, CAPTCHA solving, financial analytics) with USDC micropayments on Base. No API keys, no subscriptions.",
+  "description": "minia2a — the agent-to-agent API marketplace. Discover and pay for 1,709 x402 pay-per-call endpoints (AI inference, crypto data, web scraping, CAPTCHA solving, financial analytics) with USDC micropayments on Base. No API keys, no subscriptions.",
   "version": "0.1.0",
   "owner": {
     "name": "minia2a",
@@ -16,7 +16,7 @@
       "name": "minia2a-service-discovery",
       "source": "./plugins/minia2a-service-discovery",
       "displayName": "minia2a — Service Discovery",
-      "description": "Discover, search, and inspect 1,679 x402-payable API services on minia2a.uk. Search by keyword, filter by category, sort by price or popularity, and read any service's schema and docs before you call it.",
+      "description": "Discover, search, and inspect 1,709 x402-payable API services on minia2a.uk. Search by keyword, filter by category, sort by price or popularity, and read any service's schema and docs before you call it.",
       "version": "0.1.0",
       "author": {
         "name": "minia2a",
@@ -26,7 +26,13 @@
       "homepage": "https://minia2a.uk",
       "repository": "https://github.com/minia2auk/minia2a-claude-plugins",
       "license": "MIT",
-      "keywords": ["x402", "api-discovery", "agent-tools", "service-catalog", "m2m"],
+      "keywords": [
+        "x402",
+        "api-discovery",
+        "agent-tools",
+        "service-catalog",
+        "m2m"
+      ],
       "category": "api"
     },
     {
@@ -43,7 +49,14 @@
       "homepage": "https://minia2a.uk",
       "repository": "https://github.com/minia2auk/minia2a-claude-plugins",
       "license": "MIT",
-      "keywords": ["x402", "agent-payments", "usdc", "micropayments", "pay-per-call", "base"],
+      "keywords": [
+        "x402",
+        "agent-payments",
+        "usdc",
+        "micropayments",
+        "pay-per-call",
+        "base"
+      ],
       "category": "api"
     }
   ]
