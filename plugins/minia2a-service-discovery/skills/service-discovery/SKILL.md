@@ -14,7 +14,7 @@ Find the right pay-per-call API on [minia2a.uk](https://minia2a.uk) before you
 pay for it. Everything here is read-only and free — discovery never costs USDC.
 
 Always confirm live counts at `https://minia2a.uk/api/stats` before quoting
-numbers. As of Sep 2026 the catalog holds ~1,679 services across 20 categories.
+numbers. As of Oct 2026 the catalog holds 1,709 services across 25 categories.
 
 ## List services (`list_services`)
 
@@ -27,9 +27,9 @@ GET https://minia2a.uk/api/services?q={keyword}&category={category}&sort={sort}
 
 | Param | Values | Notes |
 |-------|--------|-------|
-| `q` | free text | substring match on name/description |
+| `q` | free text | token-wise: every space-separated term must appear in the name, description or service id (so `captcha solve` and `solve captcha` return the same set; it is not a raw substring match) |
 | `category` | see below | single category id |
-| `sort` | `newest` \| `popular` \| `price_asc` \| `price_desc` | default: popular |
+| `sort` | `newest` \| `popular` | default: popular (by trial volume). Price sorting is not implemented — sort by `priceCents` client-side |
 
 Response shape is `{ services: [...], count: n }` — the array is under the
 `services` key, not a bare array.
@@ -96,5 +96,5 @@ Popular endpoints (trial + call volume, Sep 2026): `recall` (ai) · `gas`
 
 ## Next step
 
-Once you've picked a service, use the `x402-payment` skill to register, trial,
-and pay for the call.
+Once you've picked a service, use the `x402-payment` skill for the free trial
+(signed wallet, no registration) and for paying the call.
