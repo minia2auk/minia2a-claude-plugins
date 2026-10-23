@@ -1,12 +1,19 @@
 {
   "name": "minia2a-x402-payment",
-  "description": "Call minia2a services and pay automatically with x402 USDC micropayments on Base. Covers registration, free trial calls, auto-pay clients, manual payment, and the pitfalls that lose money or fail calls.",
-  "version": "0.1.0",
+  "description": "Call minia2a services and pay automatically with x402 USDC micropayments on Base. Covers free trial calls (signed wallet, no registration), auto-pay clients, manual payment, and the pitfalls that lose money or fail calls.",
+  "version": "0.1.1",
   "author": {
     "name": "minia2a",
     "email": "iris@minia2a.uk",
     "url": "https://minia2a.uk"
   },
   "license": "MIT",
-  "keywords": ["x402", "agent-payments", "usdc", "micropayments", "pay-per-call", "base"]
+  "keywords": [
+    "x402",
+    "agent-payments",
+    "usdc",
+    "micropayments",
+    "pay-per-call",
+    "base"
+  ]
 }
