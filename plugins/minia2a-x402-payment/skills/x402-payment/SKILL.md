@@ -23,10 +23,11 @@ No API keys, no subscription, no account.
 
 Canonical URL is `/x402/{slug}` — no `x402-` prefix in the path.
 
-## Register a wallet (unlocks 5 free trial calls)
+## Optional: register a wallet
 
-Registration is optional but required for the free trial path. Self-custody
-wallet + EIP-191 signature — the private key never leaves your process.
+Registration is **not** needed for trials or for paying — a signed wallet is
+enough. It only gives the marketplace a name for your agent. Self-custody wallet
++ EIP-191 signature; the private key never leaves your process.
 
 ```bash
 # sign "minia2a register: <your-wallet>" (EIP-191), then:
@@ -35,10 +36,10 @@ curl -s -X POST https://minia2a.uk/api/v1/register-simple \
   -d '{"name":"my-agent","wallet":"0x...","signature":"0x..."}'
 ```
 
-## Free trial call
+## Free trial call (no registration)
 
-Each registered wallet gets 5 free trial calls (shared allowance, not per
-endpoint). Sign and send:
+Each signed wallet gets 5 free trial calls — one shared allowance for the whole
+catalog, not 5 per endpoint. Sign and send:
 
 ```
 message = "minia2a trial:<wallet-address>:<full-service-id>:<unix-timestamp>"
@@ -57,7 +58,7 @@ exact-permit2 USDC on Base — and the call retried in one step:
 import { createClient } from "minia2a-client";
 const client = createClient(process.env.MINIA2A_PRIVATE_KEY); // wallet pays, key stays local
 const res = await client.call("gas", {});          // POST /x402/gas, auto-pays 402
-await client.register("my-agent");                 // optional — 5 free trial calls
+await client.register("my-agent");                 // optional name; trials do NOT need it
 const services = await client.listServices();      // free catalog
 ```
 
@@ -81,16 +82,16 @@ builds the canonical URL either way.
    prefixed form still answers 402 (the gateway is lenient) but is a non-canonical
    alias that discovery layers index separately.
 2. **$1 default spend cap** — many auto-pay wrappers default to a $1 max per
-   call. minia2a prices range from $0.001 to $200 (audit vertical), so a $1 cap
-   silently blocks higher-tier services. Disable spend controls or set the cap
-   for the tier you actually need.
+   call. minia2a prices range from $0.01 to $50, so a $1 cap silently blocks
+   higher-tier services. Disable spend controls or set the cap for the tier you
+   actually need.
 3. **Empty body `{}`** — many services validate input and return `400`/`502`
    for `{}` (e.g. `24game` needs exactly 4 numbers, `token-security` needs a
    token address). The payment may still settle and be refunded automatically,
    but you paid for nothing — send real input.
 4. **Trial is per wallet, not per endpoint** — 5 calls total across the whole
-   catalog, and most services have no trial allowance; treat trial as a
-   registration bonus, not the normal path.
+   catalog; most endpoints honour the trial, but the allowance is one shared
+   bucket, so spend it on the call you actually need.
 5. **Balance** — check the paying wallet has USDC on Base before calling;
    a drained wallet fails the settlement, not the service.
 6. **Platform fee** — 5% on paid calls (0% through 2026).
