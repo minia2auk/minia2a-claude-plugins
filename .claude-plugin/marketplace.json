@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "minia2a-claude-plugins",
   "description": "minia2a — the agent-to-agent API marketplace. Discover and pay for 1,709 x402 pay-per-call endpoints (AI inference, crypto data, web scraping, CAPTCHA solving, financial analytics) with USDC micropayments on Base. No API keys, no subscriptions.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "owner": {
     "name": "minia2a",
     "email": "iris@minia2a.uk",
@@ -16,8 +16,8 @@
       "name": "minia2a-service-discovery",
       "source": "./plugins/minia2a-service-discovery",
       "displayName": "minia2a — Service Discovery",
-      "description": "Discover, search, and inspect 1,709 x402-payable API services on minia2a.uk. Search by keyword, filter by category, sort by price or popularity, and read any service's schema and docs before you call it.",
-      "version": "0.1.0",
+      "description": "Discover, search, and inspect 1,709 x402-payable API services on minia2a.uk. Search by keyword (token-wise), filter by category, sort by popularity or recency, and read any service's schema and docs before you call it.",
+      "version": "0.1.1",
       "author": {
         "name": "minia2a",
         "email": "iris@minia2a.uk",
@@ -39,8 +39,8 @@
       "name": "minia2a-x402-payment",
       "source": "./plugins/minia2a-x402-payment",
       "displayName": "minia2a — x402 Payment Flow",
-      "description": "Call minia2a services and pay automatically with x402 USDC micropayments on Base. Covers registration, free trial calls, auto-pay clients, manual payment (signature and txHash), and the pitfalls that lose money or fail calls.",
-      "version": "0.1.0",
+      "description": "Call minia2a services and pay automatically with x402 USDC micropayments on Base. Covers free trial calls (signed wallet, no registration), auto-pay clients, manual payment (signature and txHash), and the pitfalls that lose money or fail calls.",
+      "version": "0.1.1",
       "author": {
         "name": "minia2a",
         "email": "iris@minia2a.uk",
