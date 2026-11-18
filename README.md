@@ -2,7 +2,7 @@
 
 Claude plugin marketplace for [minia2a.uk](https://minia2a.uk) — the
 agent-to-agent API marketplace where agents discover, trial, and pay for
-1,679 x402 pay-per-call endpoints (AI inference, crypto data, web scraping,
+1,888 x402 pay-per-call endpoints (count read 2026-11-18; AI inference, crypto data, web scraping,
 CAPTCHA solving, financial analytics) with USDC micropayments on Base. No API
 keys, no subscriptions.
 
